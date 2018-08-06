@@ -14,14 +14,16 @@
   top: 60px;
   left: 60px;
   background: green;
+  z-index: -1;
 }
 
 
 #divid{
+    /* position: relative;  */
     height: 500px;
     width: 500px;
-    background-color: gray;
-    z-index: 10;
+    background-color: black;
+    z-index: -2;
 }
 
 </style>
@@ -29,18 +31,16 @@
 <body>
     <script>
             function greenclick(){
-                console.log("green");
+                document.location.href="http://www.yahoo.com";
             }
             function dividclick(){
-                console.log("div clicked");
+                document.location.href="http://www.google.com";
             }
     </script>
         <div id="divid" onclick="dividclick()">
-        
-              <div>
+              <!-- <div> -->
                 <input type="button" class="green" onclick="greenclick()" value="click here">
-              </div>
-              
+              <!-- </div>      -->
             </div>
               
               
