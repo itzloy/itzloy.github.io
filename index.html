@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  <script language="javascript">
-window.tdiff = []; fred = function(a,b){return a-b;};
-window.document.onload = function(e){ 
-    console.log("document.onload", e, Date.now() ,window.tdiff,  
-    (window.tdiff[0] = Date.now()) && window.tdiff.reduce(fred) ); 
+<head>
+<style>
+    #maindiv{
+        height:100px;
+        width:100px;
+        color:gray;
+    }
+img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
 }
-window.onload = function(e){ 
-    console.log("window.onload", e, Date.now() ,window.tdiff, 
-    (window.tdiff[1] = Date.now()) && window.tdiff.reduce(fred) ); 
-}
-</script>
-  </head>
+</style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>test</p>
-  <img alt="Fridtjof Nansen’s 156th Birthday" border="0" height="220" src="https://www.google.com/logos/doodles/2017/fridtjof-nansens-156th-birthday-5694774550986752-law.gif" style="padding-top:0px" title="Fridtjof Nansen’s 156th Birthday" width="644" onload="window.lol&amp;&amp;lol()">
-  <img alt="Fridtjof" src="https://www.google.com/logos/doodles/2017/childrens-day-2017-guatemala-5188605138960384-2x.png">
-  <img alt="Fridtjof" src="http://i.imgur.com/xLV4F9V.jpg">
-  <img alt="Fridtjof" src="http://www.less-real.com/imagevault/uploaded/images/part5/Fade-20323.jpg">
+<h1>The z-index Property</h1>
 
-  </body>
+<img src="w3css.gif" width="100" height="140">
+<script> 
+	function id(){
+    	console.log("hey hey hey");
+        };
+    function btnclick(){
+        console.log("button");
+        }
+<div id="maindiv" onclick="id()">
+<p>Because the image has a z-index of -1, it will be placed behind the heading.</p>
+</div>
+
+</body>
 </html>
