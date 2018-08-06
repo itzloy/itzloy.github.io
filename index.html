@@ -31,11 +31,19 @@
 </style>
 </head>
 <body>
+    <script>
+            function greenclick(){
+                console.log("green");
+            }
+            function redclick(){
+                console.log("red");
+            }
+    </script>
         <div>
-                <span class="red">Red</span>
+                <span class="red" onclick="redclick()">Red</span>
               </div>
               <div>
-                <span class="green">Green</span>
+                <span class="green" onclick="greenclick()">Green</span>
               </div>
               <div>
                 <span class="blue">Blue</span>
