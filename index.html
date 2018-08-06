@@ -28,6 +28,14 @@
   left: 100px;
   background: blue;
 }
+
+#divid{
+    height: 500px;
+    width: 500px;
+    background-color: gray;
+    z-index: 10;
+}
+
 </style>
 </head>
 <body>
@@ -35,12 +43,13 @@
             function greenclick(){
                 console.log("green");
             }
-            function redclick(){
-                console.log("red");
+            function dividclick(){
+                console.log("div clicked");
             }
     </script>
-        <div>
-                <span class="red" onclick="redclick()">Red</span>
+        <div id="divid" onclick="dividclick()">
+            <div>
+                <span class="red" >Red</span>
               </div>
               <div>
                 <span class="green" onclick="greenclick()">Green</span>
@@ -48,6 +57,8 @@
               <div>
                 <span class="blue">Blue</span>
               </div>
+            </div>
+              
               
 
 </body>
