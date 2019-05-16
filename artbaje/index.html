@@ -7,6 +7,26 @@
   <meta name="author" content="foo">
   <meta name="description" content="artbaje">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+
 </head>
 
 <body>
@@ -16,6 +36,24 @@
   <p><img src="https://raw.githubusercontent.com/itzloy/itzloy.github.io/master/artbaje/4.JPG" alt="artbaje face" height="500" width="600"></p>
   <p><img src="https://raw.githubusercontent.com/itzloy/itzloy.github.io/master/artbaje/5.JPG" alt="artbaje face" height="500" width="600"></p>
 
+<div class="row">
+  <div class="column">
+    <img src="https://raw.githubusercontent.com/itzloy/itzloy.github.io/master/artbaje/1.JPG" alt="artbaje" height="500" width="600">
+  </div>
+  <div class="column">
+    <img src="https://raw.githubusercontent.com/itzloy/itzloy.github.io/master/artbaje/2.JPG" alt="artbaje" height="500" width="600">
+  </div>
+  <div class="column">
+    <img src="https://raw.githubusercontent.com/itzloy/itzloy.github.io/master/artbaje/3.JPG" alt="artbaje" height="500" width="600">
+  </div>
+    <div class="column">
+    <img src="https://raw.githubusercontent.com/itzloy/itzloy.github.io/master/artbaje/4.JPG" alt="artbaje" height="500" width="600">
+  </div>
+    <div class="column">
+    <img src="https://raw.githubusercontent.com/itzloy/itzloy.github.io/master/artbaje/5.JPG" alt="artbaje" height="500" width="600">
+  </div>
+</div>  
+  
 </body>
 
 </html>
