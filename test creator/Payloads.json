@@ -1,0 +1,15 @@
+//Mobile
+
+{ "id":0, "name":"'+testDetailsJsonObj[x]["Test Name"]+'", "test_type":{ "id":0, "name":"Web" }, "division_id":'+testDetailsJsonObj[x]["Division ID"]+', "product_id":'+testDetailsJsonObj[x]["Product ID"]+', "status":{ "id":0, "name":"active" }, "start":"12/26/2017 1:20:00 PM", "monitor_version":{ "version_type":{ "id":1, "name":"Stable" }, "major_version_number":59 }, "monitor":{ "id":'+testDetailsJsonObj[x]["Monitor Type Id_Refer Appendix"]+', "name":"'+testDetailsJsonObj[x]["Monitor Name"]+'" }, "http_method":{ "id":0, "name":"Get" },"simulate": { "id": '+testDetailsJsonObj[x]["Mobile Simulator ID"]+', "name": "'+testDetailsJsonObj[x]["Mobile Simulator Name"]+'" }, "advanced_settings":{ "inheritance_type":{ "id":0, "name":"Inherit" } }, "test_url":"'+testDetailsJsonObj[x]["URL_Needs to be specified for Web Tests"]+'", "request_section":{ "inheritance_type":{ "id":0, "name":"Inherit" } }, "schedule_section":{ "inheritance_type":{ "id":0, "name":"Inherit" } }, "insight_section":{ "inheritance_type":{ "id":0, "name":"Inherit" } }, "alert_section":{ "inheritance_type":{ "id":0, "name":"Inherit" } }, "change_date":"2/28/2018 2:57:16 PM" }
+        
+
+//Web[chrome,IE, Object,  Eulated]  
+{ "id":0, "name":"'+testDetailsJsonObj[x]["Test Name"]+'", "test_type":{ "id":0, "name":"Web" }, "division_id":'+testDetailsJsonObj[x]["Division ID"]+', "product_id":'+testDetailsJsonObj[x]["Product ID"]+', "status":{ "id":0, "name":"active" }, "start":"12/26/2017 1:20:00 PM", "monitor_version":{ "version_type":{ "id":1, "name":"Stable" }, "major_version_number":59 }, "monitor":{ "id":'+testDetailsJsonObj[x]["Monitor Type Id_Refer Appendix"]+', "name":"'+testDetailsJsonObj[x]["Monitor Name"]+'" }, "http_method":{ "id":0, "name":"Get" }, "advanced_settings":{ "inheritance_type":{ "id":0, "name":"Inherit" } }, "test_url":"'+testDetailsJsonObj[x]["URL_Needs to be specified for Web Tests"]+'", "request_section":{ "inheritance_type":{ "id":0, "name":"Inherit" } }, "schedule_section":{ "inheritance_type":{ "id":0, "name":"Inherit" } }, "insight_section":{ "inheritance_type":{ "id":0, "name":"Inherit" } }, "alert_section":{ "inheritance_type":{ "id":0, "name":"Inherit" } }, "change_date":"2/28/2018 2:57:16 PM" }     
+
+
+
+//Ping
+
+{ "id": 0, "name": "'+testDetailsJsonObj[x]["Test Name"]+'", "test_type": { "id": 6, "name": "Ping" }, "division_id": '+testDetailsJsonObj[x]["Division ID"]+', "product_id": '+testDetailsJsonObj[x]["Product ID"]+', "description": "'+testDetailsJsonObj[x]["Description"]+'", "status": { "id": 0, "name": "Active" }, "start": "3/1/2018 1:19:00 AM", "monitor": { "id": '+testDetailsJsonObj[x]["Monitor ID"]+', "name": "'+testDetailsJsonObj[x]["Monitor Name"]+'" }, "enable_data_push_api": '+testDetailsJsonObj[x]["Enable Data Push"]+', "advanced_settings": { "inheritance_type": { "id": 0, "name": "Inherit" } }, "test_location": "'+testDetailsJsonObj[x]["Test Location"]+'", "schedule_section": { "inheritance_type": { "id": 0, "name": "Inherit" } }, "alert_section": { "inheritance_type": { "id": 0, "name": "Inherit" } }, "change_date": "3/1/2018 1:21:47 AM" }
+
+
