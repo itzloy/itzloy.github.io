@@ -75,10 +75,10 @@ img {
 <body>
 
 <div style="text-align:center; color:#00334e">
-  <h1>#artBaje 1</h1>
+  <h1>#artBaje 2</h1>
 </div>
 <marquee attribute_name = "ArtBaje" >
-   <a onclick="myFunction(this); src="https://raw.githubusercontent.com/itzloy/itzloy.github.io/master/artbaje/merch.JPG" >merch available... contact foo.. who??</a>
+   <a onclick="myFunction1(); >merch available... contact foo.. who??</a>
 </marquee>
 
 <div class="container" style="text-align: center">
@@ -199,6 +199,12 @@ function myFunction(imgs) {
   //var imgText = document.getElementById("imgtext");
   expandImg.src = imgs.src;
   //imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+}
+                                                 
+function myFunction1() {
+  var expandImg = document.getElementById("expandedImg");
+  expandImg.src = "https://raw.githubusercontent.com/itzloy/itzloy.github.io/master/artbaje/merch.JPG" ;
   expandImg.parentElement.style.display = "block";
 }
 
