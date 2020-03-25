@@ -48,6 +48,45 @@ limitations under the License.
 </head>
   <body>
 
+        <amp-analytics>
+      <script type="application/json">
+       {
+      "requests": {
+        "endpoint": "https://r.3gl.net/hawklogserver/r.p",
+        "pageview": "https://r.3gl.net/hawklogserver/r.p?data={\"v\":2,\"y\":\"load\",\"ui\":${userID},\"si\":${sessionID},\"pi\":${pageId},\"di\":${appId},\"pc\":1,\"dn\":${dns},\"fc\":7,\"wt\":${wait},\"Id\":${load},\"de\":${domInteractive},\"dl\":${domLoaded},\"rp\":1338,\"dc\":${docComplete},\"cl\":${contentLoad},\"rd\":${redirect},\"jsc\":0,\"dh\":${documentHeight},\"dw\":${documentWidth},\"rf\":\"${domain}\",\"cv\":${isConversion},\"rv\":${revenue},\"ri\":${revenue_items}}"
+         },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      },
+      "vars": {
+        "dns": "${navTiming(domainLookupStart,domainLookupEnd)}",
+        "contentLoad": "${navTiming(responseStart,domComplete)}",
+        "docComplete": "${navTiming(navigationStart,loadEventStart)}",
+        "domInteractive": "${navTiming(requestStart,domInteractive)}",
+        "domLoaded": "${navTiming(requestStart,domContentLoadedEventEnd)}",
+        "connect": "${navTiming(connectStart,connectEnd)}",
+        "load": "${navTiming(responseStart,responseEnd)}",
+        "response": "${navTiming(navigationStart,responseEnd)}",
+        "wait": "${navTiming(requestStart,responseStart)}",
+        "ssl": "${navTiming(secureConnectionStart,connectEnd)}",
+        "redirect" : "${redirectTime}",
+        "documentWidth" : "${screenWidth}",
+        "documentHeight" : "${screenHeight}",
+        "revenue_items": "0",
+        "revenue": "0",
+        "isConversion": 0,
+        "sessionID": "1063256495",
+        "userID": "45773988",
+        "pageId":"${pageViewId}",
+        "domain":"${ampdocUrl}",
+        "appId":"1105"
+      }
+    }
+    </script>
+    </amp-analytics>
 
   <!-- Start Navbar -->
   <header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr4 ">
@@ -264,46 +303,5 @@ limitations under the License.
     </div>
   </section>
     </main>
-
-    <amp-analytics>
-      <script type="application/json">
-       {
-      "requests": {
-        "endpoint": "https://r.3gl.net/hawklogserver/r.p",
-        "pageview": "https://r.3gl.net/hawklogserver/r.p?data={\"v\":2,\"y\":\"load\",\"ui\":${userID},\"si\":${sessionID},\"pi\":${pageId},\"di\":${appId},\"pc\":1,\"dn\":${dns},\"fc\":7,\"wt\":${wait},\"Id\":${load},\"de\":${domInteractive},\"dl\":${domLoaded},\"rp\":1338,\"dc\":${docComplete},\"cl\":${contentLoad},\"rd\":${redirect},\"jsc\":0,\"dh\":${documentHeight},\"dw\":${documentWidth},\"rf\":\"${domain}\",\"cv\":${isConversion},\"rv\":${revenue},\"ri\":${revenue_items}}"
-         },
-      "triggers": {
-        "trackPageview": {
-          "on": "visible",
-          "request": "pageview"
-        }
-      },
-      "vars": {
-        "dns": "${navTiming(domainLookupStart,domainLookupEnd)}",
-        "contentLoad": "${navTiming(responseStart,domComplete)}",
-        "docComplete": "${navTiming(navigationStart,loadEventStart)}",
-        "domInteractive": "${navTiming(requestStart,domInteractive)}",
-        "domLoaded": "${navTiming(requestStart,domContentLoadedEventEnd)}",
-        "connect": "${navTiming(connectStart,connectEnd)}",
-        "load": "${navTiming(responseStart,responseEnd)}",
-        "response": "${navTiming(navigationStart,responseEnd)}",
-        "wait": "${navTiming(requestStart,responseStart)}",
-        "ssl": "${navTiming(secureConnectionStart,connectEnd)}",
-        "redirect" : "${redirectTime}",
-        "documentWidth" : "${screenWidth}",
-        "documentHeight" : "${screenHeight}",
-        "revenue_items": "0",
-        "revenue": "0",
-        "isConversion": 0,
-        "sessionID": "1063256495",
-        "userID": "45773988",
-        "pageId":"${pageViewId}",
-        "domain":"${ampdocUrl}",
-        "appId":"1105"
-      }
-    }
-    </script>
-    </amp-analytics>
-
   </body>
 </html>
