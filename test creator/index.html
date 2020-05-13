@@ -29,10 +29,10 @@
 
     <script>
 	window.addEventListener('DOMContentLoaded', (event) => {
-    		console.log('The page has fully 2');
+    		console.log('The page has fully 3');
 		//RProfiler.addInfo('indicator', 'lcp', 123);
 		
-		function print_LCP({name, id, delta}){
+		function print_LCP({delta}){
 		var LCP_delta = `${delta}`;
 		    RProfiler.addInfo('indicator', 'lcp', parseInt(LCP_delta));
 		    console.log(parseInt(LCP_delta));
