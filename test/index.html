@@ -41,15 +41,15 @@
 
 		function print_CLS({delta}){
 		    var CLS_delta = `${delta}`;
-		    RProfiler.addInfo('indicator', 'cls', parseInt(CLS_delta));
-		    console.log(parseInt(CLS_delta));
+		    RProfiler.addInfo('indicator', 'cls', parseInt(CLS_delta*1000));
+		    console.log(parseInt(CLS_delta*1000));
 		}
 		webVitals.getCLS(print_CLS);
 		webVitals.getCLS(console.log);
 
 		function print_FID({delta}){
 		    var FID_delta = `${delta}`;
-		    RProfiler.addInfo('indicator', 'fid', parseInt(FID_delta*1000));
+		    RProfiler.addInfo('indicator', 'fid', parseInt(FID_delta));
 		    console.log(parseInt(FID_delta));
 		}
 		webVitals.getFID(print_FID);
