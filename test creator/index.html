@@ -29,13 +29,13 @@
 
     <script>
 	window.addEventListener('DOMContentLoaded', (event) => {
-    	console.log('The page has fully 4');
+    	console.log('The page has fully 1');
 		RProfiler.addInfo('indicator', 'lcp', 123);
 		
 		function print_LCP({name, id, delta}){
-			var valA = 890;
-		    RProfiler.addInfo('indicator', 'lcp', valA);
-		    console.log(valA);
+			var LCP_delta = `${delta}`;
+		    RProfiler.addInfo('indicator', 'lcp', parseInt(LCP_delta));
+		    console.log(parseInt(LCP_delta));
 		}
 		webVitals.getLCP(print_LCP)
 		
