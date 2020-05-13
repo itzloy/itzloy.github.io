@@ -29,12 +29,12 @@
     </script>	
 	
     <script language="javascript" type="text/javascript">
-	RProfiler.addInfo('indicator', 'lcp', 123);
+	//RProfiler.addInfo('indicator', 'lcp', 123);
 	addEventListener('DOMContentLoaded', function() {
-		function print_LCP({name, id, delta}, indicator_token){
+		function print_LCP({name, id, delta}){
 		    var LCP_delta = `${delta}`;
-		    RProfiler.addInfo('indicator', indicator_token, LCP_delta);
-		    console.log("2:"+LCP_delta);
+		    RProfiler.addInfo('indicator', 'lcp', LCP_delta);
+		    console.log("3:"+LCP_delta);
 		}
 		webVitals.getLCP(print_LCP, 'lcp');
       	});
