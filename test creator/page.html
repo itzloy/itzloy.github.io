@@ -1,1 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bulk Test Creator</title>
+    <link rel="icon" href="./favicon.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+    <script src="js/xlsx.full.min.js"></script>
+   <!-- <script src="js/converter.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="loading-bar/loading-bar.css" />
+    <script type="text/javascript" src="loading-bar/loading-bar.js"></script>
 
+   <script defer src="https://unpkg.com/web-vitals@0.2.2/dist/web-vitals.es5.umd.min.js"></script>
+
+	
+    <script type='text/javascript'>
+	var WindowEvent,VisibilityType;(function(n){n.Load="load";n.BeforeUnload="beforeunload";n.Abort="abort";n.Error="error";n.Unload="unload"})(WindowEvent||(WindowEvent={})),function(n){n[n.Focus=0]="Focus";n[n.Blur=1]="Blur"}(VisibilityType||(VisibilityType={}));var AjaxTiming=function(){function n(n,t,i,r){var u=this;this.getPerformanceTimings=function(n){u.connect=n.connectEnd-n.connectStart;u.dns=n.domainLookupEnd-n.domainLookupStart;u.duration=n.duration;u.load=n.responseEnd-n.responseStart;u.wait=n.responseStart-n.requestStart;u.start=n.startTime;u.redirect=n.redirectEnd-n.redirectStart;n.secureConnectionStart&&(u.ssl=n.connectEnd-n.secureConnectionStart)};this.url=n;this.method=t;this.isAsync=i;this.open=r}return n}(),ProfilerJsError=function(){function n(n,t,i){this.count=0;this.message=n;this.url=t;this.lineNumber=i}return n.createText=function(n,t,i){return[n,t,i].join(":")},n.prototype.getText=function(){return n.createText(this.message,this.url,this.lineNumber)},n}(),ProfilerEventManager=function(){function n(){this.events=[];this.hasAttachEvent=!!window.attachEvent}return n.prototype.add=function(n,t,i){this.events.push({type:n,target:t,func:i});this.hasAttachEvent?t.attachEvent("on"+n,i):t.addEventListener(n,i,!1)},n.prototype.remove=function(n,t,i){this.hasAttachEvent?t.detachEvent(n,i):t.removeEventListener(n,i,!1);var r=this.events.indexOf({type:n,target:t,func:i});r!==1&&this.events.splice(r,1)},n.prototype.clear=function(){for(var t,n=0,i=this.events;n<i.length;n++)t=i[n],this.remove(t.type,t.target,t.func);this.events=[]},n}(),RProfiler=function(){function n(){function o(n){var t=n.target||n.srcElement;return t.nodeType==3&&(t=t.parentNode),r("N/A",t.src||t.URL,-1),!1}var n=this,r,u,e,t,i,f;this.restUrl="g.3gl.net/jp/3701/v3.3.0/M";this.startTime=(new Date).getTime();this.eventsTimingHandler=new EventsTimingHandler;this.inputDelay=new InputDelayHandler;this.version="v3.3.0";this.info={};this.hasInsight=!1;this.data={start:this.startTime,jsCount:0,jsErrors:[],loadTime:-1,loadFired:window.document.readyState=="complete",ajax:[]};this.eventManager=new ProfilerEventManager;this.startAjaxCapture=function(){var i=XMLHttpRequest.prototype,o=i.open,s=i.send,r=[],u={},e=n.data.ajax,h=25,f=typeof performance=="object"&&typeof window.performance.now=="function"&&typeof window.performance.getEntriesByType=="function",t;f&&typeof window.performance.setResourceTimingBufferSize=="function"&&window.performance.setResourceTimingBufferSize(300);t=function(){return f?window.performance.now():(new Date).getTime()};i.open=function(n,i,u,f,e){u===void 0&&(u=!0);this.rpIndex=r.length;r.push(new AjaxTiming(i,n,u,t()));o.call(this,n,i,u,f,e)};i.send=function(n){var i=this,c=this.onreadystatechange,o;(this.onreadystatechange=function(n){var o=r[i.rpIndex],l,s;if(o){l=i.readyState;switch(l){case 1:o.connectionEstablished=t();break;case 2:o.requestReceived=t();break;case 3:o.processingTime=t();break;case 4:o.complete=t();s=!!(i.response&&i.response!=null&&i.response!=undefined);switch(i.responseType){case"text":case"":typeof i.responseText=="string"&&(o.responseSize=i.responseText.length);break;case"json":s&&typeof i.response.toString=="function"&&(o.responseSize=i.response.toString().length);break;case"arraybuffer":s&&typeof i.response.byteLength=="number"&&(o.responseSize=i.response.byteLength);break;case"blob":s&&typeof i.response.size=="number"&&(o.responseSize=i.response.size)}(function(n){setTimeout(function(){var r,s,h,c,o;if(f){var i=n.url,t=[],l=performance.getEntriesByType("resource");for(r=0,s=l;r<s.length;r++)h=s[r],h.name==i&&t.push(h);if(e.push(n),t.length!=0){if(u[i]||(u[i]=[]),t.length==1){n.getPerformanceTimings(t[0]);u[i].push(0);return}c=u[i];for(o in t)if(c.indexOf(o)==-1){n.getPerformanceTimings(t[o]);c.push(o);return}n.getPerformanceTimings(t[0])}}},h)})(o,e)}typeof c=="function"&&c.call(i,n)}},o=r[this.rpIndex],o)&&(n&&!isNaN(n.length)&&(o.sendSize=n.length),o.send=t(),s.call(this,n))}};this.recordPageLoad=function(){n.data.loadTime=(new Date).getTime();n.data.loadFired=!0};this.addError=function(t,i,r){var s,f,u,e,o;for(n.data.jsCount++,s=ProfilerJsError.createText(t,i,r),f=n.data.jsErrors,u=0,e=f;u<e.length;u++)if(o=e[u],o.getText()==s){o.count++;return}f.push(new ProfilerJsError(t,i,r))};this.addInfo=function(t,i,r){if(!n.isNullOrEmpty(t)){if(n.isNullOrEmpty(r))n.info[t]=i;else{if(n.isNullOrEmpty(i))return;n.isNullOrEmpty(n.info[t])&&(n.info[t]={});n.info[t][i]=r}n.hasInsight=!0}};this.clearInfo=function(){n.info={};n.hasInsight=!1};this.clearErrors=function(){n.data.jsCount=0;n.data.jsErrors=[]};this.clearAjax=function(){n.data.ajax=[]};this.getInfo=function(){return n.hasInsight?n.info:null};this.getEventTimingHandler=function(){return n.eventsTimingHandler};this.getInputDelay=function(){return n.inputDelay};this.eventManager.add(WindowEvent.Load,window,this.recordPageLoad);r=this.addError;this.startAjaxCapture();window.opera?this.eventManager.add(WindowEvent.Error,document,o):"onerror"in window&&(u=window.onerror,window.onerror=function(n,t,i){return(r(n,t,i),!!u)?u(n,t,i):!1});!window.__cpCdnPath||(this.restUrl=window.__cpCdnPath.trim());e=window.location.protocol;t=document.createElement("iframe");t.src="about:blank";i=t.style;i.position="absolute";i.top="-10000px";i.left="-1000px";t.addEventListener("load",function(t){var r=t.currentTarget,u,i;r&&r.contentDocument&&(u=r.contentDocument,i=u.createElement("script"),i.type="text/javascript",i.src=e+"//"+n.restUrl,u.body.appendChild(i))});f=document.getElementsByTagName("script")[0];f.parentNode.insertBefore(t,f)}return n.prototype.isNullOrEmpty=function(n){if(n===undefined||n===null)return!0;if(typeof n=="string"){var t=n;return t.trim().length==0}return!1},n.prototype.dispatchCustomEvent=function(n){(function(n){function t(n,t){t=t||{bubbles:!1,cancelable:!1,detail:undefined};var i=document.createEvent("CustomEvent");return i.initCustomEvent(n,t.bubbles,t.cancelable,t.detail),i}if(typeof n.CustomEvent=="function")return!1;t.prototype=Event.prototype;n.CustomEvent=t})(window);var t=new CustomEvent(n);window.dispatchEvent(t)},n}(),InputDelayHandler=function(){function n(){var n=this;this.firstInputDelay=0;this.firstInputTimeStamp=0;this.startTime=0;this.delay=0;this.profileManager=new ProfilerEventManager;this.eventTypes=["click","mousedown","keydown","touchstart","pointerdown",];this.addEventListeners=function(){n.eventTypes.forEach(function(t){n.profileManager.add(t,document,n.onInput)})};this.now=function(){return(new Date).getTime()};this.removeEventListeners=function(){n.eventTypes.forEach(function(t){n.profileManager.remove(t,document,n.onInput)})};this.onInput=function(t){var i,r,u;t.cancelable&&(i=t.timeStamp>1e12,n.firstInputTimeStamp=n.now(),r=i||!window.performance,u=r?n.firstInputTimeStamp:window.performance.now(),n.delay=u-t.timeStamp,t.type=="pointerdown"?n.onPointerDown():(n.removeEventListeners(),n.updateFirstInputDelay()))};this.onPointerUp=function(){n.removeEventListeners();n.updateFirstInputDelay()};this.onPointerCancel=function(){n.removePointerEventListeners()};this.removePointerEventListeners=function(){n.profileManager.remove("pointerup",document,n.onPointerUp);n.profileManager.remove("pointercancel",document,n.onPointerCancel)};this.updateFirstInputDelay=function(){n.delay>=0&&n.delay<n.firstInputTimeStamp-n.startTime&&(n.firstInputDelay=Math.round(n.delay))};this.startSoftNavigationCapture=function(){n.resetSoftNavigationCapture()};this.resetSoftNavigationCapture=function(){n.resetFirstInputDelay();n.addEventListeners()};this.resetFirstInputDelay=function(){n.delay=0;n.firstInputDelay=0;n.startTime=0;n.firstInputTimeStamp=0};this.startTime=this.now();this.addEventListeners()}return n.prototype.onPointerDown=function(){this.profileManager.add("pointerup",document,this.onPointerUp);this.profileManager.add("pointercancel",document,this.onPointerCancel)},n.prototype.getFirstInputDelay=function(){return this.firstInputDelay},n}(),EventsTimingHandler=function(){function n(){var n=this;this.hiddenStrings=["hidden","msHidden","webkitHidden","mozHidden"];this.visibilityStrings=["visibilitychange","msvisibilitychange","webkitvisibilitychange","mozvisibilitychange"];this.captureSoftNavigation=!1;this.hidden="hidden";this.visibilityChange="visibilitychange";this.visibilityEvents=[];this.eventManager=new ProfilerEventManager;this.engagementTimeIntervalMs=1e3;this.engagementTime=0;this.firstEngagementTime=0;this.lastEventTimeStamp=0;this.timeoutId=undefined;this.startTime=(new Date).getTime();this.now=function(){return(new Date).getTime()};this.startVisibilityCapture=function(){n.initializeVisibilityProperties();document.addEventListener(n.visibilityChange,n.captureFocusEvent,!1)};this.initializeVisibilityProperties=function(){for(var r=n.hiddenStrings,i=0,t=0;t<r.length;t++)typeof document[r[t]]!="undefined"&&(i=t);n.visibilityChange=n.visibilityStrings[i];n.hidden=n.hiddenStrings[i]};this.captureFocusEvent=function(){n.updateVisibilityChangeTime();document[n.hidden]||n.captureEngagementTime()};this.updateVisibilityChangeTime=function(){document[n.hidden]?n.captureVisibilityEvent(VisibilityType.Blur):n.captureVisibilityEvent(VisibilityType.Focus)};this.onBlur=function(){n.captureVisibilityEvent(VisibilityType.Blur)};this.onFocus=function(){n.captureVisibilityEvent(VisibilityType.Focus)};this.captureVisibilityEvent=function(t){n.visibilityEvents.push({type:t,time:n.now()})};this.captureEngagementTime=function(t){if(t===void 0&&(t=!0),!n.lastEventTimeStamp){n.engagementTime=n.engagementTimeIntervalMs;n.lastEventTimeStamp=n.now();return}var i=n.now()-n.lastEventTimeStamp;if(n.lastEventTimeStamp=n.now(),t&&n.firstEngagementTime===0&&(n.firstEngagementTime=n.now()),i>0&&i<n.engagementTimeIntervalMs){clearTimeout(n.timeoutId);n.engagementTime+=i;return}n.startTimer()};this.captureMouseMove=function(){n.captureEngagementTime(!1)};this.startTimer=function(){n.timeoutId=setTimeout(function(){n.engagementTime+=n.engagementTimeIntervalMs},n.engagementTimeIntervalMs)};this.getFocusAwayTime=function(){var i=n.visibilityEvents,t=-1,s,h,o;if(i.length===0)return 0;for(var r=t,u=0,f=t,e=0;u<i.length;)i[u].type===VisibilityType.Blur&&r===t&&(r=u),s=f===t&&r!==t,i[u].type===VisibilityType.Focus&&s&&(f=u),h=r!==t&&f!==t,h&&(o=i[f].time-i[r].time,o>0&&(e+=o),r=t,f=t),u=u+1;return r===i.length-1&&(e+=n.now()-i[r].time),e};this.getEngagementTime=function(){return n.engagementTime};this.getStartTime=function(){return n.startTime};this.getFirstEngagementTime=function(){return n.firstEngagementTime};this.startSoftNavigationCapture=function(){n.captureSoftNavigation=!0};this.resetSoftNavigationCapture=function(){n.resetEngagementMetrics();n.visibilityEvents=[]};this.resetEngagementMetrics=function(){n.engagementTime=0;n.lastEventTimeStamp=n.now();n.firstEngagementTime=0};this.clear=function(){n.eventManager.clear()};this.captureEngagementTime(!1);this.eventManager.add("scroll",document,this.captureEngagementTime);this.eventManager.add("resize",window,this.captureEngagementTime);this.eventManager.add("mouseup",document,this.captureEngagementTime);this.eventManager.add("keyup",document,this.captureEngagementTime);this.eventManager.add("mousemove",document,this.captureMouseMove);this.eventManager.add("focus",window,this.onFocus);this.eventManager.add("blur",window,this.onBlur);this.eventManager.add("focus",document,this.onFocus);this.eventManager.add("blur",document,this.onBlur)}return n}(),profiler=new RProfiler;window.RProfiler=profiler;window.WindowEvent=WindowEvent;profiler.dispatchCustomEvent("GlimpseLoaded");
+	    
+    </script>
+	
+
+    <script>
+	window.addEventListener('DOMContentLoaded', (event) => {
+    		console.log('The page has fully 4');
+		RProfiler.addInfo('indicator', 'lcp', 123);
+		
+		function print_LCP({name, id, delta}){
+		    var LCP_delta = `${delta}`;
+		    RProfiler.addInfo('indicator', 'lcp', LCP_delta);
+		    console.log("1:"+LCP_delta);
+		}
+		webVitals.getLCP(print_LCP)
+		
+	});
+   </script>
+	
+	<!--
+	    <script language="javascript" type="text/javascript">
+	RProfiler.addInfo('indicator', 'lcp', 123);
+	addEventListener('DOMContentLoaded', function() {
+		function print_LCP({name, id, delta}){
+		    var LCP_delta = `${delta}`;
+		    RProfiler.addInfo('indicator', 'lcp', LCP_delta);
+		    console.log("0:"+LCP_delta);
+		}
+		webVitals.getLCP(print_LCP);
+      	});
+    </script>
+	-->
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner clearfix">
+            <div class="logo">
+                <a title="Home" href="http://www.catchpoint.com">
+              <!--<img src="http://theme.zdassets.com/theme_assets/540700/5503c921e70bb0ed4660ab13454fb4eb0d0b06d2.png" alt="Logo">-->
+          </a>
+            </div>
+        </div>
+    </header>
+    <br>
+    <div id="wrapper" class="container">
+        <fieldset>
+            <div class="form-group">
+                <div class="col-md-6">
+                    <label class="control-label" for="Key">Consumer Key</label>
+                    <input name="Key" class="form-control" placeholder="Enter Key" type="text" value="">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-6">
+                    <label class="control-label" for="Secret">Secret</label>
+                    <input name="Secret" class="form-control" placeholder="Enter Secret" type="text" value="">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-6">
+                    <label class="control-label" for="file">Select a file</label>
+                    <input name="file" id="file" class="form-control" type="file" style="padding: 4px">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-6">
+                    <label class="control-label" for="WorkSheet">Select WorkSheet</label>
+                    <input id="worksheet-number" name="workSheet" class="form-control" placeholder="WorkSheet number" type="text" value="1">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <div class="progress">
+                        <div class="progress-bar" id ="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                            <span class="sr-only">50% Complete</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <div class="col-md-4 text-center col-md-offset-4">
+                    <button id="submitBtn" class="btn btn-primary btn-lg btn-block info">Create</button>
+                    <!--<button onclick="uploadFile(this);" id="submitBtn" class="btn btn-primary btn-lg btn-block info">Create</button>-->
+                </div>
+				<div class="col-md-4 text-center col-md-offset-4">
+                   <a href="./excels/template.xlsx" download> <button id="submitBtn" class="btn btn-primary btn-lg btn-block info " download><i class="fa fa-download"></i>Template</button></a>
+                    <!--<button onclick="uploadFile(this);" id="submitBtn" class="btn btn-primary btn-lg btn-block info">Create</button>-->
+                </div>
+            </div>
+        </fieldset>
+        <div class="row">
+            <div id="code"></div>
+        </div>
+    </div>
+    <div class="sfwa_footer_area">
+        <aside id="text-5" class="widget widget_text">
+            <div class="textwidget">
+                <div class="col-md-4">
+                    <p></p>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <script>
+        // variable holds data for csv file
+        var CSVDataArray = [];
+
+        document.getElementById("submitBtn").addEventListener("click", uploadFile);
+        
+        function createCORSRequest(method, url) {
+          var xhr = new XMLHttpRequest();
+
+          if ("withCredentials" in xhr) {
+            // Check if the XMLHttpRequest object has a "withCredentials" property.
+            // "withCredentials" only exists on XMLHTTPRequest2 objects.
+            xhr.open(method, url, true);
+            xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+          } else if (typeof XDomainRequest != "undefined") {
+            // Otherwise, check if XDomainRequest.
+            // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
+            xhr = new XDomainRequest();
+            xhr.open(method, url);
+            xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
+          } else {
+            // Otherwise, CORS is not supported by the browser.
+            xhr = null;
+          }
+          return xhr;
+        }
+
+        function getToken(testDetailsJson){
+            var xhr = createCORSRequest('POST', 'https://io.catchpoint.com/ui/api/token');
+            if (!xhr) {
+              throw new Error('CORS not supported');
+            }
+
+            xhr.onload = function() {
+             var responseText = xhr.responseText;
+             // extract the token from response, please install the plugin for this to work [cross domain issue]
+             var token = responseText.substring("18",responseText.indexOf("token_type")-4)
+             console.log(token);
+             console.log(responseText);
+             // process the response.
+             // convert the token to base 64:
+             var base64= window.btoa(token);
+             console.log(base64);
+            CreateTestAjaxInitialize("POST", "https://io.catchpoint.com/ui/api/v1/tests/0", base64, testDetailsJson);
+            };
+            // get the key and secret
+            var key= document.getElementsByClassName("form-control")[0].value;
+            var secret= document.getElementsByClassName("form-control")[1].value;
+            // generate the token
+            xhr.send("grant_type=client_credentials&client_id="+key+"&client_secret="+secret);   
+}
+
+function CreateTestAjaxInitialize(method, url, base64, testDetailsJson) {
+
+    testDetailsJsonObj = JSON.parse(testDetailsJson);
+    //for(x=0; x<testDetailsJsonObj.length; x++){
+    //console.log(testDetailsJsonObj[x]["Test Name"]);
+        var currentProgressBarStatus = 0;
+
+        var x = 0;
+        // set UTC time and date
+        var hours = new Date().getUTCHours();
+        var suf = "AM";
+        var hour = hours;
+        if(hours>12){
+        hour = hours-12;
+        suf = "PM";
+        }
+        utcNow = new Date().getUTCMonth()+1+"/"+new Date().getUTCDate()+"/"+new Date().getUTCFullYear()+" "+hour+":"+new Date().getUTCMinutes()+":"+new Date().getUTCSeconds()+" "+ suf;
+
+
+        //This fuction will create a test using ajax in every 7 seconds
+        var intervalId = setInterval(function(){
+        var xhr = new XMLHttpRequest();
+
+        if ("withCredentials" in xhr) {
+            // Check if the XMLHttpRequest object has a "withCredentials" property.
+            // "withCredentials" only exists on XMLHTTPRequest2 objects.
+            xhr.open(method, url, true);
+            xhr.setRequestHeader("Accept","application/json");
+            xhr.setRequestHeader("Authorization","Bearer "+base64);
+        } else if (typeof XDomainRequest != "undefined") {
+            // Otherwise, check if XDomainRequest.
+            // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
+            xhr = new XDomainRequest();
+            xhr.open(method, url);
+            xhr.setRequestHeader("Accept","application/json");
+            xhr.setRequestHeader("Authorization","Bearer "+base64);
+        } else {
+            // Otherwise, CORS is not supported by the browser.
+            xhr = null;
+        }
+
+        // Get the Status ID
+        if(testDetailsJsonObj[x]["Status [wether the test should be active or inactive when setup]"]=="Active"){
+            var activeId=0;
+        }else{
+            var activeId=1;
+        }
+
+        switch(testDetailsJsonObj[x]["Test Type"]){
+
+            case "Web":
+            // Var 'data' should contain the JSON file to be posted
+            var data = '{ "id":0, "name":"'+testDetailsJsonObj[x]["Test Name"]+'", "test_type":{ "id":0, "name":"Web" }, "division_id":'+testDetailsJsonObj[x]["Division ID"]+', "product_id":'+testDetailsJsonObj[x]["Product ID"]+',"parent_folder_id": '+testDetailsJsonObj[x]["Parent Folder ID"]+', "status":{ "id":'+activeId+', "name":"'+testDetailsJsonObj[x]["Status [wether the test should be active or inactive when setup]"]+'" }, "start":"'+utcNow+'", "monitor_version":{ "version_type":{ "id":1, "name":"Stable" }, "major_version_number":59 }, "monitor":{ "id":'+testDetailsJsonObj[x]["Monitor Type Id[Refer Appendix]"]+', "name":"'+testDetailsJsonObj[x]["Monitor Name"]+'" }, "http_method":{ "id":0, "name":"Get" }, "advanced_settings":{ "inheritance_type":{ "id":0, "name":"Inherit" } }, "test_url":"'+testDetailsJsonObj[x]["URL[Needs to be specified for Web Tests. Make sure to include protocol]"]+'", "request_section":{ "inheritance_type":{ "id":0, "name":"Inherit" } }, "schedule_section":{ "inheritance_type":{ "id":0, "name":"Inherit" } }, "insight_section":{ "inheritance_type":{ "id":0, "name":"Inherit" } }, "alert_section":{ "inheritance_type":{ "id":0, "name":"Inherit" } }, "change_date":"'+utcNow+'" }';
+            break;
+
+            case "DNS Direct":
+            var data = '{"id":0,"name":"'+testDetailsJsonObj[x]["Test Name"]+'","test_type":{"id":5,"name":"DNS"},"division_id":'+testDetailsJsonObj[x]["Division ID"]+',"product_id":'+testDetailsJsonObj[x]["Product ID"]+',"parent_folder_id": '+testDetailsJsonObj[x]["Parent Folder ID"]+',"status":{"id":'+activeId+',"name":"'+testDetailsJsonObj[x]["Status [wether the test should be active or inactive when setup]"]+'"},"start":"'+utcNow+'","monitor":{"id":13,"name":"Direct"},"dns_query_type":{"id":1,"name":"A"},"dns_server":"'+testDetailsJsonObj[x]["DNS Server[Needs to be specified for DNS Direct Tests]"]+'","advanced_settings":{"inheritance_type":{"id":1,"name":"Override"}},"test_domain":"'+testDetailsJsonObj[x]["Domain[Needs to be specified for DNS Direct, DNS Experience, trace and ping Tests]"]+'","protocol":{"id":'+testDetailsJsonObj[x]["Protocol [for DNS direct and experience]"]+',"name":"Udp"},"schedule_section":{"inheritance_type":{"id":0,"name":"Inherit"}},"alert_section":{"inheritance_type":{"id":0,"name":"Inherit"}},"change_date":"'+utcNow+'"}';
+            console.log("Status: "+testDetailsJsonObj[x]["Status [wether the test should be active or inactive when setup]"]);
+            console.log("Id: "+activeId);
+            break;
+
+           case "DNS Experience":
+            var data = '{"id":0,"name":"'+testDetailsJsonObj[x]["Test Name"]+'","test_type":{"id":5,"name":"DNS"},"division_id":'+testDetailsJsonObj[x]["Division ID"]+',"product_id":'+testDetailsJsonObj[x]["Product ID"]+',"parent_folder_id": '+testDetailsJsonObj[x]["Parent Folder ID"]+',"status":{"id":'+activeId+',"name":"'+testDetailsJsonObj[x]["Status [wether the test should be active or inactive when setup]"]+'"},"start":"'+utcNow+'","monitor":{"id":12,"name":"Experience"},"dns_query_type":{"id":1,"name":"A"},"advanced_settings":{"inheritance_type":{"id":1,"name":"Override"}},"test_domain":"'+testDetailsJsonObj[x]["Domain[Needs to be specified for DNS Direct, DNS Experience, trace and ping Tests]"]+'","protocol":{"id":'+testDetailsJsonObj[x]["Protocol [for DNS direct and experience]"]+',"name":"Udp"},"schedule_section":{"inheritance_type":{"id":0,"name":"Inherit"}},"alert_section":{"inheritance_type":{"id":0,"name":"Inherit"}},"change_date":"'+utcNow+'"}';
+            console.log("Status: "+testDetailsJsonObj[x]["Status [wether the test should be active or inactive when setup]"]);
+            console.log("ID: "+activeId);
+            break;
+
+            case "Trace Route":
+            var data = '{"id":0,"name":"'+testDetailsJsonObj[x]["Test Name"]+'","test_type":{"id":12,"name":"Trace Route"},"division_id":'+testDetailsJsonObj[x]["Division ID"]+',"product_id":'+testDetailsJsonObj[x]["Product ID"]+',"parent_folder_id": '+testDetailsJsonObj[x]["Parent Folder ID"]+',"status":{"id":'+activeId+',"name":"'+testDetailsJsonObj[x]["Status [wether the test should be active or inactive when setup]"]+'"},"start":"'+utcNow+'","monitor":{"id":'+testDetailsJsonObj[x]["Monitor Type Id[Refer Appendix]"]+',"name":"Trace Route ICMP"},"advanced_settings":{"inheritance_type":{"id":1,"name":"Override"}},"test_location":"'+testDetailsJsonObj[x]["Domain[Needs to be specified for DNS Direct, DNS Experience, trace and ping Tests]"]+'","schedule_section":{"inheritance_type":{"id":0,"name":"Inherit"}},"alert_section":{"inheritance_type":{"id":0,"name":"Inherit"}},"change_date":"'+utcNow+'"}';
+            break;
+
+            case "Ping":
+            var data = '{"id":0,"name":"'+testDetailsJsonObj[x]["Test Name"]+'","test_type":{"id":6,"name":"Ping"},"division_id":'+testDetailsJsonObj[x]["Division ID"]+',"product_id":'+testDetailsJsonObj[x]["Product ID"]+',"parent_folder_id": '+testDetailsJsonObj[x]["Parent Folder ID"]+',"status":{"id":'+activeId+',"name":"'+testDetailsJsonObj[x]["Status [wether the test should be active or inactive when setup]"]+'"},"start":"'+utcNow+'","monitor":{"id":'+testDetailsJsonObj[x]["Monitor Type Id[Refer Appendix]"]+',"name":"Ping ICMP"},"advanced_settings":{"inheritance_type":{"id":0,"name":"Inherit"}},"test_location":"'+testDetailsJsonObj[x]["Domain[Needs to be specified for DNS Direct, DNS Experience, trace and ping Tests]"]+'","schedule_section":{"inheritance_type":{"id":0,"name":"Inherit"}},"alert_section":{"inheritance_type":{"id":0,"name":"Inherit"}},"change_date":"'+utcNow+'"}';
+            break;
+        }
+
+        xhr.onload = function() {
+             // progess bar update.
+        var progressBar = document.getElementById("progress-bar");
+             //currentProgressBarStatus
+             var eachBarIncrement = 100/testDetailsJsonObj.length;
+             currentProgressBarStatus += eachBarIncrement;
+             progressBar.setAttribute("style", "width:"+currentProgressBarStatus+"%");
+
+            // adding logs on the page. 
+            var logElement = document.getElementsByClassName("downloadCSV");
+            var node = document.createElement("div");
+            var respSummary=JSON.parse(xhr.responseText);
+            if(respSummary.status){
+
+                var textnode = document.createTextNode(x+"."+respSummary.id+" "+testDetailsJsonObj[x-1]["Test Name"]+" "+respSummary.status);
+                node.appendChild(textnode);
+                logElement[0].appendChild(node);
+                // Create array for csv data
+                //CSVDataArray[x] = "['"+x+"','"+respSummary.id+"','"+testDetailsJsonObj[x]["Test Name"]+"','"+respSummary.status+"']";
+                CSVDataArray[x] = x+","+respSummary.id+","+testDetailsJsonObj[x-1]["Test Name"]+","+respSummary.status;
+            }
+            else{
+                var textnode = document.createTextNode(x+"."+testDetailsJsonObj[x-1]["Test Name"]+": "+respSummary.Message);
+                node.appendChild(textnode);
+                logElement[0].appendChild(node);
+                // Create array for csv data
+                //CSVDataArray[x] = "['"+x+"','"+testDetailsJsonObj[x]["Test Name"]+"','"+respSummary.Message+"']";
+                CSVDataArray[x] = x+",N/A,"+testDetailsJsonObj[x]["Test Name"]+","+respSummary.Message;
+                
+            }
+        };
+
+        console.log(CSVDataArray[x]);
+        //The following call will create the test in the portal using ajax request by passing JSON data
+        xhr.send(data);
+
+        x++;
+        if(x==testDetailsJsonObj.length){
+            clearInterval(intervalId);
+        }
+        },7000)
+    //}
+}
+
+function uploadFile() {
+    var file_data = $('#file').prop('files')[0];
+    var form_data = new FormData();
+    form_data.append('excelFile', file_data);
+    $.ajax({
+        url: 'uploadExcel.php', // point to server-side PHP script
+        dataType: 'text', // what to expect back from the PHP script
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,
+        type: 'post',
+        success: function (response) {
+            getFile(response);
+        },
+        error: function (response) {
+            $('#msg').html(response); // display error response from the PHP script
+        }
+    });
+}
+
+function getFile(fileName) {
+    /* set up XMLHttpRequest */
+    var url = "excels/" + fileName;
+    var worksheetNumber = $("#worksheet-number").val();
+    var oReq = new XMLHttpRequest();
+    oReq.open("GET", url, true);
+    oReq.responseType = "arraybuffer";
+
+    oReq.onload = function (e) {
+        var arraybuffer = oReq.response;
+
+        /* convert data to binary string */
+        var data = new Uint8Array(arraybuffer);
+        var arr = new Array();
+        for (var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
+        var bstr = arr.join("");
+
+        /* Call XLSX */
+        var workbook = XLSX.read(bstr, { type: "binary" });
+
+        /* DO SOMETHING WITH workbook HERE */
+        var first_sheet_name = workbook.SheetNames[worksheetNumber - 1];
+        /* Get worksheet */
+        var worksheet = workbook.Sheets[first_sheet_name];
+		
+		var testDetailsJson=JSON.stringify(XLSX.utils.sheet_to_json(worksheet, { raw: true }), null, 2);
+		//console.log(testDetailsJson);
+        getToken(testDetailsJson);
+        $("#code").html('<pre class="alert alert-info" id="json-data"><div class="downloadCSV" id="downloadCSV" onclick="downloadCsv()" title="downloadCsv"><i class="fa fa-download pull-right"></i><br/>Logs</div></pre>');
+    }
+    oReq.send();
+}
+
+function copyToClipBoard(){
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($("#json-data").text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+}
+
+
+function downloadCsv(){
+    var convertedCSVDataArray = [];
+    for(var i = 1; i < CSVDataArray.length; i++){
+     convertedCSVDataArray.push(CSVDataArray[i]);
+    }
+
+    var csvContent = "data:text/csv;charset=utf-8,";
+    csvContent += "Serial No, Test ID, Test Name, Status\r\n";
+    for(var i=0; i<convertedCSVDataArray.length; i++){
+       //var eachRow = convertedCSVDataArray[i].replace(/'/g, '');
+       //eachRow = eachRow.replace(/\[/g, '');
+       //eachRow = eachRow.replace(/\]/g, '');
+       //csvContent += eachRow + "\r\n";
+       csvContent += convertedCSVDataArray[i]+"\r\n";
+    }
+    var encodedUri = encodeURI(csvContent);
+    window.open(encodedUri);
+}
+    </script>
+</body>
+</html>
