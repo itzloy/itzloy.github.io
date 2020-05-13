@@ -35,7 +35,13 @@
 	    console.log("1: "+LCP_delta);
 	}
 
-	RProfiler.addInfo('indicator', 'lcp', webVitals.getLCP(printD));    
+	RProfiler.addInfo('indicator', 'lcp', );    
+
+	addEventListener('DOMContentLoaded', function() {
+	  
+	  var val = webVitals.getCLS(printD);
+	  RProfiler.addInfo('indicator', 'lcp', val);
+	});
 	
     </script>
 	
