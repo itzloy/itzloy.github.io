@@ -28,7 +28,7 @@
 
     <script>
 	window.addEventListener('DOMContentLoaded', (event) => {
-    		console.log('The page has fully 1');
+    		console.log('The page has fully 2');
 		//RProfiler.addInfo('indicator', 'lcp', 123);
 		
 		function print_LCP({delta}){
@@ -40,7 +40,7 @@
 		webVitals.getLCP(console.log);
 
 		function print_CLS({delta}){
-		    var CLS_delta = `${delta}`*1000;
+		    var CLS_delta = `${delta}`;
 		    RProfiler.addInfo('indicator', 'cls', parseInt(CLS_delta));
 		    console.log(parseInt(CLS_delta));
 		}
