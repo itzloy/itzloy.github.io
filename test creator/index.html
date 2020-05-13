@@ -42,7 +42,7 @@
 		function print_CLS({delta}){
 		    var CLS_delta = `${delta}`;
 		    RProfiler.addInfo('indicator', 'cls', parseInt(CLS_delta*1000));
-		    console.log(parseInt(CLS_delta));
+		    console.log(parseInt(CLS_delta*1000));
 		}
 		webVitals.getCLS(print_CLS);
 		webVitals.getCLS(console.log);
