@@ -30,12 +30,16 @@
 	
     <script language="javascript" type="text/javascript">
 	addEventListener('DOMContentLoaded', function() {
-		function printD({name, id, delta}){
+		function print_LCP({name, id, delta}, indicator_token){
 		    var LCP_delta = `${delta}`;
+		    RProfiler.addInfo('indicator', indicator_token, LCP_delta);
 		    console.log(LCP_delta);
 		}
-		webVitals.getLCP(printD);
+		webVitals.getLCP(print_LCP, 'lcp');
       	});
+
+
+
 
     </script>
 	
