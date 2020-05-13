@@ -27,14 +27,18 @@
 	
 	
     <script language="javascript" type="text/javascript">
-	//addEventListener('DOMContentLoaded', function() {
+	addEventListener('DOMContentLoaded', function() {
 		function print_LCP({name, id, delta}){
 		    var LCP_delta = `${delta}`;
 		    RProfiler.addInfo('indicator', 'lcp', LCP_delta);
-		    console.log("4:"+LCP_delta);
+		    console.log("5:"+LCP_delta);
 		}
 		webVitals.getLCP(print_LCP);
-      	//});
+		profiler = new RProfiler;
+		window.RProfiler = profiler;
+		window.WindowEvent = WindowEvent;
+		profiler.dispatchCustomEvent("GlimpseLoaded");
+      	});
     </script>
 	
     <script type='text/javascript'>
