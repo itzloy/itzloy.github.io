@@ -23,23 +23,21 @@
 	    window.RProfiler=profiler;
 	    window.WindowEvent=WindowEvent;
 	    profiler.dispatchCustomEvent("GlimpseLoaded");
-	    
     </script>
 	
 
     <script>
 	window.addEventListener('DOMContentLoaded', (event) => {
-    		console.log('The page has fully 4');
+    		console.log('The page has fully 5');
 		//RProfiler.addInfo('indicator', 'lcp', 123);
 		
-		function print_LCP({delta}){
+		function print_LCP({delta}, indicator_token){
 		var LCP_delta = `${delta}`;
-		    RProfiler.addInfo('indicator', 'lcp', parseInt(LCP_delta));
+		    RProfiler.addInfo('indicator', indicator_token, parseInt(LCP_delta));
 		    console.log(parseInt(LCP_delta));
 		}
-		webVitals.getLCP(print_LCP);
+		webVitals.getLCP(print_LCP, 'lcp');
 		webVitals.getLCP(console.log);
-		
 	});
    </script>
 	
