@@ -1,0 +1,14 @@
+#banner {
+	margin:0;
+	padding:0;
+	background-color:#425424;
+}
+#banner #bannerImage {
+	position:absolute;
+	top:-59px;
+	right:0;
+}
+#sidebar .moduletable_menu ul li a {
+	overflow:hidden;
+	height:28px;
+}

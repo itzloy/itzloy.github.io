@@ -1,0 +1,47 @@
+#banner {
+	background:url("../images/bannerBg.jpg") no-repeat center;
+	height:185px;
+	border-top:16px solid #425424;
+	position:relative;
+}
+#nav .moduletable_menu ul {
+	margin:30px 0 0 0;
+	list-style:none;
+	height:54px;
+	background:url("../images/menuBg.jpg") repeat-x;
+}
+#nav .moduletable_menu ul li a:hover {
+	background:url("../images/rollOver.jpg") repeat-x 0 1px;
+	color:#333;
+}
+#sidebar .moduletable_menu ul li a:hover {
+	background-color:#e6edd7;
+}
+#content .contentheading, .componentheading {
+	color:#54652e;
+	font-size:2.2em;
+	font-weight:bold;
+	margin-bottom:.5em;
+}
+#secondary #nav .moduletable_menu ul {
+	margin:5px 0 0 0;
+	list-style:none;
+	height:54px;
+	background:url("../images/menuBg.jpg") repeat-x;
+}
+#secondary #nav .moduletable_menu ul li a:hover {
+	background:url("../images/rollOver.jpg") repeat-x 0 1px;
+	color:#333;
+}
+#secondary #content h3 {
+	color:#53612e;
+	font-size:2em;
+}
+.popup {
+	color:#fff;
+	background:#c65326 no-repeat;
+	border:3px solid #9f431f;
+}
+.popup a {
+	color:#425424;
+}

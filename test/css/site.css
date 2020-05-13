@@ -1,0 +1,220 @@
+@import url("framework/core.css");
+@import url("framework/plugins/helpers.css");
+body {
+	margin:0;
+	background:#b9b9b9 url("../images/bodyBg.jpg") repeat-x;
+}
+#wrapper {
+	background:#b9b9b9 url("../images/wrapperBackground.jpg") repeat-x;
+	margin-top:40px;
+	padding:14px;
+}
+#mainArea {
+	background-color:#fff;
+	border:1px solid #999;
+}
+#header {
+	position:relative;
+	padding:20px;
+}
+#logo {
+	margin:0 0 20px;
+}
+#freeDownload {
+	position:absolute;
+	top:20px;
+	right:20px;
+}
+#banner .moduletable {
+	margin:20px 30px;
+	color:#fff;
+	width:400px;
+}
+#banner .moduletable h2 {
+	color:#fff;
+	font-size:2.2em;
+	line-height:1em;
+}
+#banner #bannerImage {
+	position:absolute;
+	top:-62px;
+	right:0;
+}
+#nav {
+	margin-top:-30px;
+}
+#nav .moduletable_menu ul li {
+	padding:0;
+	margin:0;
+	float:left;
+}
+#nav .moduletable_menu ul li a {
+	display:block;
+	float:left;
+	color:#fff;
+	text-decoration:none;
+	padding:16px 30px 19px 30px;
+	text-transform:uppercase;
+	font-weight:bold;
+}
+#contentArea {
+	padding:20px;
+}
+#sidebar {
+	float:right;
+	width:225px;
+}
+#sidebar .moduletable_menu ul {
+	margin:0;
+	list-style:none;
+	text-align:right;
+}
+#sidebar .moduletable_menu ul li#current a {
+	border:none;
+}
+#sidebar .moduletable_menu ul li a {
+	display:block;
+	text-decoration:none;
+	color:#333;
+	font-size:1.5em;
+	border:1px #eee solid;
+	margin:1px 0 1px 12px;
+	padding:10px;
+}
+#sidebar .moduletable_menu ul li#current {
+	display:block;
+	background:url("../images/sidebarMenuOver.jpg") no-repeat;
+}
+#sidebar .moduletable_menu ul li#current a {
+	background-color:none;
+	color:#555;
+}
+#sidebar .moduletable_menu ul li#current a:hover {
+	background:transparent url("../images/sidebarMenuOver.jpg") -12px;
+}
+#content {
+	width:560px;
+	color:#555;
+}
+#content img {
+	border:5px solid #ccc;
+	float:left;
+	margin:0 30px 10px 0;
+}
+#secondary #nav {
+	margin-top:-30px;
+}
+#secondary #nav .moduletable_menu ul li {
+	padding:0;
+	margin:0;
+	float:left;
+}
+#secondary #nav .moduletable_menu ul li a {
+	display:block;
+	float:left;
+	color:#fff;
+	text-decoration:none;
+	padding:16px 30px 19px 30px;
+	text-transform:uppercase;
+	font-weight:bold;
+}
+#secondary #content .contentheading, #secondary #content .componentheading, #secondary h2 {
+	color:#000;
+	font-size:2.5em;
+	margin:0;
+}
+#content ul.blackcheck, #content ul.greencheck, #content ul.orangecheck {
+	list-style:none;
+}
+#content ul.blackcheck li, #content ul.greencheck li, #content ul.orangecheck li {
+	margin:0 0 10px 0;
+	padding:5px 80px;
+}
+#content ul.blackcheck li {
+	background:url("../images/blackCheck.jpg") no-repeat;
+}
+#content ul.greencheck li {
+	background:url("../images/greenCheck.jpg") no-repeat;
+}
+#content ul.orangecheck li {
+	background:url("../images/orangeCheck.jpg") no-repeat;
+}
+#content ul.blackcheck li span {
+	font-size:1.5em;
+	color:#000;
+}
+#content ul.greencheck li span {
+	font-size:1.5em;
+	color:#909d79;
+}
+#content ul.orangecheck li span {
+	font-size:1.5em;
+	color:#ba3f23;
+}
+.bubbleInfo {
+	position:relative;
+	width:130px;
+	float:left;
+}
+.bubbleInfo {
+	position:relative;
+	width:130px;
+	float:left;
+}
+.popup {
+	position:absolute;
+	display:none;
+	width:110px;
+	padding:5px;
+	text-align:center;
+	line-height:15px;
+	z-index:1;
+}
+.popup p {
+	margin:0;
+	font-size:11px;
+}
+.popup a {
+	font-style:italic;
+}
+#sidebar .moduletable {
+	padding:15px;
+	margin:0 0 20px 0;
+	border:1px solid #ccc;
+}
+#sidebar .moduletable h3 {
+	font-weight:bold;
+	border-bottom:1px solid #999;
+	padding:5px 0;
+}
+#sidebar .moduletable.green {
+	background-color:#ebf1e3;
+	border:1px solid #c2cbb2;
+}
+#sidebar .moduletable.orange {
+	background-color:#ddcec8;
+	border:1px solid #a78a80;
+}
+#sidebar .moduletable.blue {
+	background-color:#ccdfe7;
+	border:1px solid #10303d;
+}
+#footer, #footer p {
+	margin:0;
+	padding:0;
+	font-size:11px;
+}
+#footer {
+	width:870px;
+	margin:0 auto;
+}
+#footer, #footer a {
+	color:#555;
+	text-decoration:none;
+}
+#footer .left {
+	float:left;
+}
+#footer .right {
+	float:right;
+}
