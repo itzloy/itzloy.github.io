@@ -31,10 +31,13 @@
 		function print_LCP({name, id, delta}){
 		    var LCP_delta = `${delta}`;
 		    RProfiler.addInfo('indicator', 'lcp', LCP_delta);
-		    console.log("5:"+LCP_delta);
+		    console.log("6:"+LCP_delta);
 		}
-		webVitals.getLCP(print_LCP);
+		
 		profiler = new RProfiler;
+
+		webVitals.getLCP(print_LCP);
+		
 		window.RProfiler = profiler;
 		window.WindowEvent = WindowEvent;
 		profiler.dispatchCustomEvent("GlimpseLoaded");
