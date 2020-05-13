@@ -27,11 +27,11 @@
 	
 	
     <script language="javascript" type="text/javascript">
-	addEventListener('DOMContentLoaded', function() {
+	addEventListener('onload', function() {
 		function print_LCP({name, id, delta}){
 		    var LCP_delta = `${delta}`;
 		    RProfiler.addInfo('indicator', 'lcp', LCP_delta);
-		    console.log("1:"+LCP_delta);
+		    console.log("2:"+LCP_delta);
 		}
 		webVitals.getLCP(print_LCP, 'lcp');
       	});
