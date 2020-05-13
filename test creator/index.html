@@ -28,16 +28,33 @@
 
     <script>
 	window.addEventListener('DOMContentLoaded', (event) => {
-    		console.log('The page has fully 5');
+    		console.log('The page has fully 0');
 		//RProfiler.addInfo('indicator', 'lcp', 123);
 		
-		function print_LCP({delta}, indicator_token){
-		var LCP_delta = `${delta}`;
-		    RProfiler.addInfo('indicator', indicator_token, parseInt(LCP_delta));
+		function print_LCP({delta}){
+		    var LCP_delta = `${delta}`;
+		    RProfiler.addInfo('indicator', 'lcp', parseInt(LCP_delta));
 		    console.log(parseInt(LCP_delta));
 		}
-		webVitals.getLCP(print_LCP, 'lcp');
+		webVitals.getLCP(print_LCP);
 		webVitals.getLCP(console.log);
+
+		function print_CLS({delta}){
+		    var CLS_delta = `${delta}`;
+		    RProfiler.addInfo('indicator', 'cls', parseInt(CLS_delta));
+		    console.log(parseInt(CLS_delta));
+		}
+		webVitals.getCLS(print_CLS);
+		webVitals.getCLS(console.log);
+
+		function print_FID({delta}){
+		    var FID_delta = `${delta}`;
+		    RProfiler.addInfo('indicator', 'fid', parseInt(FID_delta));
+		    console.log(parseInt(FID_delta));
+		}
+		webVitals.getFID(print_FID);
+		webVitals.getFID(console.log);
+
 	});
    </script>
 	
