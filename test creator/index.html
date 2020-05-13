@@ -33,7 +33,7 @@
 		function print_LCP({name, id, delta}, indicator_token){
 		    var LCP_delta = `${delta}`;
 		    RProfiler.addInfo('indicator', indicator_token, LCP_delta);
-		    console.log(LCP_delta);
+		    console.log("1:"+LCP_delta);
 		}
 		webVitals.getLCP(print_LCP, 'lcp');
       	});
