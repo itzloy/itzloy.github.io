@@ -26,12 +26,7 @@
     <script>
 	window.addEventListener('DOMContentLoaded', (event) => {
     		console.log('The page has fully 2');
-		function print_LCP({name, id, delta}){
-		    var LCP_delta = `${delta}`;
-		    RProfiler.addInfo('indicator', 'lcp', LCP_delta);
-		    console.log("0:"+LCP_delta);
-		}
-		webVitals.getLCP(print_LCP)
+		RProfiler.addInfo('indicator', 'lcp', 123);
 	});
    </script>
 	
