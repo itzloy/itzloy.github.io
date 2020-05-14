@@ -32,12 +32,13 @@
 	window.WindowEvent=WindowEvent;
 	profiler.dispatchCustomEvent("GlimpseLoaded");
     </script>
-	
+
+	<!--
     <script>
 	RProfiler.addInfo('indicator', 'lcp', 13333.01);
 	RProfiler.addInfo('indicator', 'cls', 33.0001); 
 	RProfiler.addInfo('indicator', 'fdi', 33.00000000001); 
-	condole.log("change 1")
+	console.log("change 1")
 	    
 	window.addEventListener('DOMContentLoaded', (event) => {
 		function print_LCP({delta}){
@@ -62,6 +63,18 @@
 		webVitals.getFID(print_FID);
 	});
    </script>
+	-->
+	
+	<script>
+	console.log("change 1");	
+		
+	addEventListener('DOMContentLoaded', function() {
+	  //RProfiler.addInfo('indicator', 'lcp', 13333.01);
+	  webVitals.getCLS(RProfiler.addInfo('indicator', 'aaa', {delta}););
+	  webVitals.getFID(console.log);
+	  webVitals.getLCP(console.log);
+	});
+</script>
     
 </head>
 
