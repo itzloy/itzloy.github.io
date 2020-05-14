@@ -69,7 +69,7 @@
 	function setIndicator({name, delta}){
 	  var indicator_token = name == 'CLS' ? 'cls' : name == 'FID' ? 'fid' : name == 'LCP' ? 'lcp' : null;
 	  if(indicator_token!=null){
-	    RProfiler.addInfo('indicator', indicator_token, parseFloat(delta).toFixed(2));
+	    RProfiler.addInfo('indicator', indicator_token, delta);
 	  }
 	}
 	
