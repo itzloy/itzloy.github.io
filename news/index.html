@@ -66,7 +66,7 @@
 	-->
 
 <script>
-	console.log("change 8");
+	console.log("change 0");
 	
 	function setIndicator({name, delta}){
 	  var indicator_token = name == 'CLS' ? 'cls' : name == 'FID' ? 'fid' : name == 'LCP' ? 'lcp' : null;
@@ -77,13 +77,13 @@
 	  }
 	}
 	
-	addEventListener('DOMContentLoaded', function() {
+	//addEventListener('DOMContentLoaded', function() {
 	  //webVitals.getLCP(setIndicator);
 	  console.log("DOMContentLoaded occured");
 	  webVitals.getCLS(setIndicator);
 	  webVitals.getFID(setIndicator);
 	  webVitals.getLCP(setIndicator);
-	});
+	//});
 </script>
 
 </head>
