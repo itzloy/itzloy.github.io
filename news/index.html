@@ -66,14 +66,14 @@
 	-->
 
 <script>
-	console.log("change 5");
+	console.log("change 6");
 	
 	function setIndicator({name, delta}){
 	  var indicator_token = `${name}==CLS` ? "cls" : `${name}==FID` ? "fid" : `${name}==LCP` ? "lcp" : null;
 	  if(indicator_token!=null){
 	    RProfiler.addInfo('indicator', indicator_token, delta);
 	  }
-	  console.log('delta: '+delta);
+	  console.log(`delta for {name}: `+delta);
 	}
 	
 	addEventListener('DOMContentLoaded', function() {
