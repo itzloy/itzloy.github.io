@@ -64,24 +64,26 @@
 	});
    </script>
 	-->
+
+<script>
+	console.log("change 3");
 	
-	<script>
-	console.log("change 2");
-	function print_LCP({metric}){
-	    var LCP_delta = `${metric}`;
-	    RProfiler.addInfo('indicator', 'lcp', parseInt(LCP_delta));
-	    console.log(parseInt(LCP_delta));
+	function setIndicator({name, delta}){
+	  var LCP_delta = `${delta}`;
+	  var indicator_token = `${name}==CLS` ? "cls" : `${name}==FID` ? "fid" : `${name}==LCP` ? "lcp";
+	  RProfiler.addInfo('indicator', indicator_token, parseInt(LCP_delta));
+	  console.log(parseInt(LCP_delta));
 	}
 	
 	addEventListener('DOMContentLoaded', function() {
-	  webVitals.getLCP(print_LCP);
+	  webVitals.getLCP(setIndicator);
 	  
 	  webVitals.getCLS(console.log);
 	  webVitals.getFID(console.log);
 	  webVitals.getLCP(console.log);
 	});
 </script>
-    
+
 </head>
 
 <body>
