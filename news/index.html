@@ -70,7 +70,7 @@
 	
 	function setIndicator({name, delta}){
 	  var LCP_delta = `${delta}`;
-	  var indicator_token = `${name}==CLS` ? "cls" : `${name}==FID` ? "fid" : `${name}==LCP` ? "lcp";
+	  var indicator_token = `${name}==CLS` ? "cls" : `${name}==FID` ? "fid" : `${name}==LCP` ? "lcp" : null;
 	  RProfiler.addInfo('indicator', indicator_token, parseInt(LCP_delta));
 	  console.log(parseInt(LCP_delta));
 	}
