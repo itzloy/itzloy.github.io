@@ -66,11 +66,16 @@
 	-->
 	
 	<script>
-	console.log("change 1");	
-		
+	console.log("change 2");
+	function print_LCP({metric}){
+	    var LCP_delta = `${metric}`;
+	    RProfiler.addInfo('indicator', 'lcp', parseInt(LCP_delta));
+	    console.log(parseInt(LCP_delta));
+	}
+	
 	addEventListener('DOMContentLoaded', function() {
-	  //RProfiler.addInfo('indicator', 'lcp', 13333.01);
-	  webVitals.getCLS(RProfiler.addInfo);
+	  webVitals.getLCP(print_LCP);
+	  
 	  webVitals.getCLS(console.log);
 	  webVitals.getFID(console.log);
 	  webVitals.getLCP(console.log);
