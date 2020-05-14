@@ -66,21 +66,22 @@
 	-->
 
 <script>
-	console.log("change 4");
+	console.log("change 5");
 	
 	function setIndicator({name, delta}){
-	  var LCP_delta = `${delta}`;
 	  var indicator_token = `${name}==CLS` ? "cls" : `${name}==FID` ? "fid" : `${name}==LCP` ? "lcp" : null;
-	  RProfiler.addInfo('indicator', indicator_token, delta);
+	  if(indicator_token!null){
+	    RProfiler.addInfo('indicator', indicator_token, delta);
+	  }
 	  console.log('delta: '+delta);
 	}
 	
 	addEventListener('DOMContentLoaded', function() {
+	  //webVitals.getLCP(setIndicator);
+	  console.log('DOMContentLoaded occured!!');
+	  webVitals.getCLS(setIndicator);
+	  webVitals.getFID(setIndicator);
 	  webVitals.getLCP(setIndicator);
-	  
-	  webVitals.getCLS(console.log);
-	  webVitals.getFID(console.log);
-	  webVitals.getLCP(console.log);
 	});
 </script>
 
