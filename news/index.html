@@ -33,7 +33,11 @@
 	profiler.dispatchCustomEvent("GlimpseLoaded");
     </script>
 	
-    <script>    
+    <script>
+	RProfiler.addInfo('indicator', 'lcp', 1950);
+	RProfiler.addInfo('indicator', 'cls', 1); 
+	RProfiler.addInfo('indicator', 'fdi', 1); 
+	    
 	window.addEventListener('DOMContentLoaded', (event) => {
 		function print_LCP({delta}){
 		    var LCP_delta = `${delta}`;
