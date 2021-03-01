@@ -66,18 +66,22 @@
 	-->
 
 <script>
-	function setIndicator({name, delta}){
-	  var indicator_token = name == 'CLS' ? 'cls' : name == 'FID' ? 'fid' : name == 'LCP' ? 'lcp' : null;
-	  if(indicator_token!=null){
-	    RProfiler.addInfo('indicator', indicator_token, parseFloat(parseFloat(delta).toFixed(2)));
-	  }
-	}
-	
-	addEventListener('DOMContentLoaded', function() {
-	  webVitals.getCLS(setIndicator);
-	  webVitals.getFID(setIndicator);
-	  webVitals.getLCP(setIndicator);
-	});
+	 // Function to set indicator value based on the token.
+	 function setIndicator({
+	 name: t,
+	 delta: e
+	 }) {
+	 var a = "CLS" == t ? "<indicator_token>" : "FID" == t ? 
+	 "<indicator_token>" : "LCP" == t ? "<indicator_token>" : null;
+	 null != a && 
+	 RProfiler.addInfo("indicator",a,parseFloat(parseFloat(e).toFixed(2)))
+	 }
+	 // Set Web Vital metrics on DOMContentLoaded event.
+	 addEventListener("DOMContentLoaded", (function() {
+	 webVitals.getCLS(setIndicator);
+	 webVitals.getFID(setIndicator);
+	 webVitals.getLCP(setIndicator)
+ }))
 </script>
 
 </head>
