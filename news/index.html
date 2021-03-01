@@ -30,7 +30,8 @@ var WindowEvent,VisibilityType;(function(n){n.Load="load";n.BeforeUnload="before
 <!-- Load `web-
 vitals` using a classic script that sets the global `webVitals` object. -->
 <script defer src="https://unpkg.com/web-vitals"></script>
-	
+
+	<!-- works
 <script>
 	 // Function to set indicator value based on the token.
 	 function setIndicator({
@@ -49,7 +50,26 @@ vitals` using a classic script that sets the global `webVitals` object. -->
 	 webVitals.getLCP(setIndicator)
  }))
 </script>
+-->
 
+<script>
+  function sendVital(metric){
+    if(metric.isFinal)
+    {
+      //Convert CLS to integer
+      metric.value = Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value);
+      dataLayer.push({"event":"Vital Reported",
+                      "vital.name":metric.name, 
+                      "vital.value":metric.value,
+                     "vital.id":metric.id});
+    }
+  }
+  
+  webVitals.getCLS(sendVital,true);
+  webVitals.getFID(sendVital);
+  webVitals.getLCP(sendVital,true);
+</script>
+	
 </head>
 
 <body>
