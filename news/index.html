@@ -50,11 +50,11 @@ function setIndicator({
 	RProfiler.addInfo("indicator",a,parseFloat(parseFloat(e).toFixed(2)))
 }
 // Set Web Vital metrics on DOMContentLoaded event.
-addEventListener("DOMContentLoaded", (function() {
+//addEventListener("DOMContentLoaded", (function() {
 	webVitals.getCLS(setIndicator);
 	webVitals.getFID(setIndicator);
 	webVitals.getLCP(setIndicator)
-}))
+//}))
 </script>
 
 </head>
