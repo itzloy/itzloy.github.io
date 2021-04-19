@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>2</title>
+    <title>3</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
@@ -43,6 +43,7 @@ function setIndicator({
 	}) {
 	console.log("setIndicator Function Execution");
     	console.log("Web vital value: " + e);
+	console.log("Web vital name: " + t);
 	var a = "CLS" == t ? "cls" : "FID" == t ? 
 	"fid" : "LCP" == t ? "lcp" : null;
 	null != a && 
@@ -55,7 +56,7 @@ addEventListener("DOMContentLoaded", (function() {
 	webVitals.getLCP(setIndicator)
 }))
 </script>
-	
+
 </head>
 <body>
 <!-- Preloader Start -->
