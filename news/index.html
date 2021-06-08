@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>3</title>
+    <title>0</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
@@ -49,12 +49,13 @@ function setIndicator({
 	null != a && 
 	RProfiler.addInfo("indicator",a,parseFloat(parseFloat(e).toFixed(2)))
 }
+
 // Set Web Vital metrics on DOMContentLoaded event.
-//addEventListener("DOMContentLoaded", (function() {
+addEventListener("DOMContentLoaded", (function() {
 	webVitals.getCLS(setIndicator);
 	webVitals.getFID(setIndicator);
 	webVitals.getLCP(setIndicator)
-//}))
+}))
 </script>
 
 </head>
