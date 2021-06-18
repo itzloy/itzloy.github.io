@@ -38,6 +38,23 @@ vitals` using a classic script that sets the global `webVitals` object.
   getCLS(console.log);
   getFID(console.log);
   getLCP(console.log);
+
+  function setIndicator({
+	name: t,
+	delta: e
+	}) {
+	console.log("setIndicator Function Execution");
+    	console.log("Web vital value: " + e);
+	console.log("Web vital name: " + t);
+	var a = "CLS" == t ? "cls" : "FID" == t ? 
+	"fid" : "LCP" == t ? "lcp" : null;
+	null != a && 
+	RProfiler.addInfo("indicator",a,parseFloat(parseFloat(e).toFixed(2)))
+  }
+
+  getCLS(setIndicator);
+  getFID(setIndicator);
+  getLCP(setIndicator)
 </script>	
 
 <!-- <script defer src="https://unpkg.com/web-vitals"></script>
