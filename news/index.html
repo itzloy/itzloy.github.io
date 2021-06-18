@@ -60,6 +60,20 @@ vitals` using a classic script that sets the global `webVitals` object.
 	
 <!-- Load the "standard" version (using a classic script) -->
 <script>
+
+function setIndicator({
+	name: t,
+	delta: e
+	}) {
+	console.log("setIndicator Function Execution");
+    	console.log("Web vital value: " + e);
+	console.log("Web vital name: " + t);
+	var a = "CLS" == t ? "cls" : "FID" == t ? 
+	"fid" : "LCP" == t ? "lcp" : null;
+	null != a && 
+	RProfiler.addInfo("indicator",a,parseFloat(parseFloat(e).toFixed(2)))
+  }
+
 (function() {
   var script = document.createElement('script');
   script.src = 'https://unpkg.com/web-vitals/dist/web-vitals.iife.js';
