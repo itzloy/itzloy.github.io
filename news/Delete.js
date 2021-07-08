@@ -12144,7 +12144,6 @@
     		webVitals.getLCP(setIndicator);
 	};
 	
-	console.log("outside");
 	let catchpoint_run = function(ddo) {
 			let catPro = window.RProfiler,
 				ddoPageInfo = ddo.page.pageInfo,
