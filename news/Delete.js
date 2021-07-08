@@ -12143,7 +12143,12 @@
 		console.log("inside DOMContentLoaded")
 	}));
 	
-	document.addEventListener('DOMContentLoaded', (event) => {
+	window.onload = function() {
+	  init();
+	  console.log("inside onload")
+	};
+	
+	document.addEventListener('onload', (event) => {
 		webVital.getFID(setIndicator);
 		webVital.getCLS(setIndicator);
 		webVital.getLCP(setIndicator);
