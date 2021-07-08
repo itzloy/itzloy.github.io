@@ -55,7 +55,7 @@ vitals` using a classic script that sets the global `webVitals` object.
 	
 <!-- Load the "standard" version (using a classic script) 
 When loading `web-vitals` using a classic script, all the public
-methods can be found on the `webVitals` global namespace.
+methods can be found on the `webVitals` global namespace. -->
 
 
 <script>
@@ -80,8 +80,37 @@ function setIndicator({
   document.head.appendChild(script);
 }())
 </script>	
--->
 
+
+	
+	
+	
+<!-- Load the "base+polyfill" version (using a classic script) -->
+<!-- Load the UMD version of the "base" bundle. 
+<script>
+function setIndicator({
+	name: t,
+	delta: e
+}) {
+	var a = "CLS" == t ? "cls" : "FID" == t ? 
+	"fid" : "LCP" == t ? "lcp" : null;
+	null != a && 
+	RProfiler.addInfo("indicator",a,parseFloat(parseFloat(e).toFixed(2)))
+}
+
+(function() {
+  var script = document.createElement('script');
+  script.src = 'https://unpkg.com/web-vitals/dist/web-vitals.iife.js';
+  script.onload = function() {
+    webVitals.getCLS(setIndicator);
+    webVitals.getFID(setIndicator);
+    webVitals.getLCP(setIndicator);
+  }
+  document.head.appendChild(script);
+}())
+</script>	
+-->	
+	
 	
 	
 <!-- <script defer src="https://unpkg.com/web-vitals"></script>
