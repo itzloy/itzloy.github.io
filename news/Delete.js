@@ -12144,16 +12144,18 @@
 	}));
 	
 	window.onload = function() {
-	  init();
-	  console.log("inside onload")
-	};
-	
-	document.addEventListener('onload', (event) => {
+	  	console.log("inside onload");
 		webVital.getFID(setIndicator);
 		webVital.getCLS(setIndicator);
 		webVital.getLCP(setIndicator);
-	});
+	};
 	
+	document.addEventListener('onload', (event) => {
+		console.log("inside addEventListener onload");
+	});
+	window.addEventListener('DOMContentLoaded', (event) => {
+	    	console.log('DOM fully loaded and parsed');
+	});
 
 	console.log("outside");
 	let catchpoint_run = function(ddo) {
