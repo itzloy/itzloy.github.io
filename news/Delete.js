@@ -12135,12 +12135,10 @@
 		name: t,
 		delta: e
 	}) {
-		console.log("inside setIndicator");
 		var a = "CLS" == t ? "cls" : "FID" == t ? "fid" : "LCP" == t ? "lcp" : null;
 		null != a && RProfiler.addInfo("indicator", a, parseFloat(parseFloat(e).toFixed(2)))
 	}
 	window.onload = function() {
-	  	console.log("inside onload");
 		webVitals.getCLS(setIndicator);
     		webVitals.getFID(setIndicator);
     		webVitals.getLCP(setIndicator);
