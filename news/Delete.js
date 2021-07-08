@@ -12139,7 +12139,7 @@
 		var a = "CLS" == t ? "cls" : "FID" == t ? "fid" : "LCP" == t ? "lcp" : null;
 		null != a && RProfiler.addInfo("indicator", a, parseFloat(parseFloat(e).toFixed(2)))
 	}
-	addEventListener("DOMContentLoaded", (function() {
+	document.addEventListener("DOMContentLoaded", (function() {
 		console.log("inside DOMContentLoaded");
 		webVitals.getCLS(setIndicator), webVitals.getFID(setIndicator), webVitals.getLCP(setIndicator)
 	}));
