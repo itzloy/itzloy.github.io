@@ -12141,9 +12141,9 @@
 	}
 	window.onload = function() {
 	  	console.log("inside onload");
-		webVital.getFID(setIndicator);
-		webVital.getCLS(setIndicator);
-		webVital.getLCP(setIndicator);
+		webVitals.getCLS(setIndicator);
+    		webVitals.getFID(setIndicator);
+    		webVitals.getLCP(setIndicator);
 	};
 	
 	console.log("outside");
