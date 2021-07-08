@@ -12139,7 +12139,6 @@
 		null != a && RProfiler.addInfo("indicator", a, parseFloat(parseFloat(e).toFixed(2)))
 	}
 	addEventListener("DOMContentLoaded", (function() {
-		console.log("inside DOMContentLoaded")
 		webVitals.getCLS(function ({ name: t, delta: e }) { var a = "CLS" == t ? "cls" : "FID" == t ? "fid" : "LCP" == t ? "lcp" : null; null != a && RProfiler.addInfo("indicator", a, parseFloat(parseFloat(e).toFixed(2))) }), webVitals.getFID(function ({ name: t, delta: e }) { var a = "CLS" == t ? "cls" : "FID" == t ? "fid" : "LCP" == t ? "lcp" : null; null != a && RProfiler.addInfo("indicator", a, parseFloat(parseFloat(e).toFixed(2))) }), webVitals.getLCP(function ({ name: t, delta: e }) { var a = "CLS" == t ? "cls" : "FID" == t ? "fid" : "LCP" == t ? "lcp" : null; null != a && RProfiler.addInfo("indicator", a, parseFloat(parseFloat(e).toFixed(2))) })
 	}));
 	let catchpoint_run = function(ddo) {
