@@ -12139,10 +12139,6 @@
 		var a = "CLS" == t ? "cls" : "FID" == t ? "fid" : "LCP" == t ? "lcp" : null;
 		null != a && RProfiler.addInfo("indicator", a, parseFloat(parseFloat(e).toFixed(2)))
 	}
-	document.addEventListener("DOMContentLoaded", (function() {
-		console.log("inside DOMContentLoaded")
-	}));
-	
 	window.onload = function() {
 	  	console.log("inside onload");
 		webVital.getFID(setIndicator);
@@ -12150,13 +12146,6 @@
 		webVital.getLCP(setIndicator);
 	};
 	
-	document.addEventListener('onload', (event) => {
-		console.log("inside addEventListener onload");
-	});
-	window.addEventListener('DOMContentLoaded', (event) => {
-	    	console.log('DOM fully loaded and parsed');
-	});
-
 	console.log("outside");
 	let catchpoint_run = function(ddo) {
 			let catPro = window.RProfiler,
