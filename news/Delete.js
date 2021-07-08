@@ -12140,9 +12140,9 @@
 		null != a && RProfiler.addInfo("indicator", a, parseFloat(parseFloat(e).toFixed(2)))
 	}
 	document.addEventListener("DOMContentLoaded", (function() {
-		console.log("inside DOMContentLoaded");
-		webVitals.getCLS(setIndicator), webVitals.getFID(setIndicator), webVitals.getLCP(setIndicator)
+		console.log("inside DOMContentLoaded")
 	}));
+	console.log("outside");
 	let catchpoint_run = function(ddo) {
 			let catPro = window.RProfiler,
 				ddoPageInfo = ddo.page.pageInfo,
