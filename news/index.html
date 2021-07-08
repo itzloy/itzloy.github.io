@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>2</title>
+    <title>21</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
@@ -53,16 +53,16 @@ vitals` using a classic script that sets the global `webVitals` object.
 	
 	
 	
-<!-- Load the "standard" version (using a classic script) -->
+<!-- Load the "standard" version (using a classic script) 
+When loading `web-vitals` using a classic script, all the public
+methods can be found on the `webVitals` global namespace.
+-->
 
 <script>
 function setIndicator({
 	name: t,
 	delta: e
 	}) {
-	console.log("setIndicator Function Execution");
-    	console.log("Web vital value: " + e);
-	console.log("Web vital name: " + t);
 	var a = "CLS" == t ? "cls" : "FID" == t ? 
 	"fid" : "LCP" == t ? "lcp" : null;
 	null != a && 
@@ -73,11 +73,6 @@ function setIndicator({
   var script = document.createElement('script');
   script.src = 'https://unpkg.com/web-vitals/dist/web-vitals.iife.js';
   script.onload = function() {
-    // When loading `web-vitals` using a classic script, all the public
-    // methods can be found on the `webVitals` global namespace.
-    webVitals.getCLS(console.log);
-    webVitals.getFID(console.log);
-    webVitals.getLCP(console.log);
     webVitals.getCLS(setIndicator);
     webVitals.getFID(setIndicator);
     webVitals.getLCP(setIndicator);
