@@ -12142,9 +12142,14 @@
 	document.addEventListener("DOMContentLoaded", (function() {
 		console.log("inside DOMContentLoaded")
 	}));
-	webVital.getFID(setIndicator);
-	webVital.getCLS(setIndicator);
-	webVital.getLCP(setIndicator);
+	
+	document.addEventListener('DOMContentLoaded', (event) => {
+		webVital.getFID(setIndicator);
+		webVital.getCLS(setIndicator);
+		webVital.getLCP(setIndicator);
+	});
+	
+
 	console.log("outside");
 	let catchpoint_run = function(ddo) {
 			let catPro = window.RProfiler,
