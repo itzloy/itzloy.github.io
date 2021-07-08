@@ -31,13 +31,9 @@ var WindowEvent,VisibilityType;(function(n){n.Load="load";n.BeforeUnload="before
 vitals` using a classic script that sets the global `webVitals` object. 
 <script defer src="https://unpkg.com/web-vitals@0.2.1/dist/web-vitals.es5.umd.min.js"></script>  -->
 
-<!-- Append the `?module` param to load the module version of `web-vitals` 
+<!-- Append the `?module` param to load the module version of `web-vitals` -->
 <script type="module">
   import {getCLS, getFID, getLCP} from 'https://unpkg.com/web-vitals?module';
-
-  getCLS(console.log);
-  getFID(console.log);
-  getLCP(console.log);
 
   function setIndicator({
 	name: t,
@@ -51,16 +47,21 @@ vitals` using a classic script that sets the global `webVitals` object.
 	null != a && 
 	RProfiler.addInfo("indicator",a,parseFloat(parseFloat(e).toFixed(2)))
   }
-
+  getCLS(console.log);
+  getFID(console.log);
+  getLCP(console.log);
   getCLS(setIndicator);
   getFID(setIndicator);
   getLCP(setIndicator)
 </script>	
--->
+
+	
+	
+	
 	
 <!-- Load the "standard" version (using a classic script) -->
+<!--
 <script>
-
 function setIndicator({
 	name: t,
 	delta: e
@@ -90,11 +91,12 @@ function setIndicator({
   document.head.appendChild(script);
 }())
 </script>	
-
-<!-- <script defer src="https://unpkg.com/web-vitals"></script>
-<script type="text/javascript" async="" charset="utf-8" id="utag_dropbox.main_434" src="<script type="text/javascript" async="" charset="utf-8" id="utag_dropbox.main_434" src="//tags.tiqcdn.com/utag/dropbox/main/dev/utag.434.js?utv=ut4.46.202104052302"></script>"></script>
+-->
 
 	
+	
+<!-- <script defer src="https://unpkg.com/web-vitals"></script>
+<script type="text/javascript" async="" charset="utf-8" id="utag_dropbox.main_434" src="<script type="text/javascript" async="" charset="utf-8" id="utag_dropbox.main_434" src="//tags.tiqcdn.com/utag/dropbox/main/dev/utag.434.js?utv=ut4.46.202104052302"></script>"></script>	
 <script>
 // Function to set indicator value based on the token.
 function setIndicator({
