@@ -12143,7 +12143,7 @@
 			webVitals.getCLS(setIndicator), webVitals.getFID(setIndicator), webVitals.getLCP(setIndicator)
 		}
 	};*/
-	document.addEventListner("onload", function() {
+	window.addEventListner("onload", function() {
 		if(typeof webVitals !== 'undefined'){
 			webVitals.getCLS(setIndicator), webVitals.getFID(setIndicator), webVitals.getLCP(setIndicator)
 		}
