@@ -12140,9 +12140,7 @@
 	}
 	window.onload = function() {
 		if(typeof webVitals !== 'undefined'){
-			webVitals.getCLS(setIndicator);
-    			webVitals.getFID(setIndicator);
-    			webVitals.getLCP(setIndicator);
+			webVitals.getCLS(setIndicator), webVitals.getFID(setIndicator), webVitals.getLCP(setIndicator)
 		}
 	};
 	let catchpoint_run = function(ddo) {
