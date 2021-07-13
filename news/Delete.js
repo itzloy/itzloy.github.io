@@ -12139,9 +12139,11 @@
 		null != a && RProfiler.addInfo("indicator", a, parseFloat(parseFloat(e).toFixed(2)))
 	}
 	window.onload = function() {
-		webVitals.getCLS(setIndicator);
-    		webVitals.getFID(setIndicator);
-    		webVitals.getLCP(setIndicator);
+		if(typeof webVitals !== 'undefined'){
+			webVitals.getCLS(setIndicator);
+    			webVitals.getFID(setIndicator);
+    			webVitals.getLCP(setIndicator);
+		}
 	};
 	
 	let catchpoint_run = function(ddo) {
