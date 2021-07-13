@@ -12143,11 +12143,11 @@
 			webVitals.getCLS(setIndicator), webVitals.getFID(setIndicator), webVitals.getLCP(setIndicator)
 		}
 	};*/
-	window.addEventListner("onload", function() {
+	document.addEventListener("readystatechange", (function() {
 		if(typeof webVitals !== 'undefined'){
 			webVitals.getCLS(setIndicator), webVitals.getFID(setIndicator), webVitals.getLCP(setIndicator)
 		}
-	});
+	}));
 	let catchpoint_run = function(ddo) {
 			let catPro = window.RProfiler,
 				ddoPageInfo = ddo.page.pageInfo,
