@@ -12143,8 +12143,8 @@
 			webVitals.getCLS(setIndicator), webVitals.getFID(setIndicator), webVitals.getLCP(setIndicator)
 		}
 	};*/
-	document.addEventListener("onload", (function() {
-		console.log('addEventListener');
+	window.addEventListener("DOMContentLoaded", (function() {
+		console.log('addEventListener 1');
 		if(typeof webVitals !== 'undefined'){
 			webVitals.getCLS(setIndicator), webVitals.getFID(setIndicator), webVitals.getLCP(setIndicator)
 		}
