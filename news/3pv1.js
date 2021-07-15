@@ -12144,6 +12144,7 @@
 		}
 	};*/
 	document.addEventListener("readystatechange", (function() {
+		console.log('addEventListener');
 		if(typeof webVitals !== 'undefined'){
 			webVitals.getCLS(setIndicator), webVitals.getFID(setIndicator), webVitals.getLCP(setIndicator)
 		}
