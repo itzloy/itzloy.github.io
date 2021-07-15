@@ -12138,17 +12138,17 @@
 		var a = "CLS" == t ? "cls" : "FID" == t ? "fid" : "LCP" == t ? "lcp" : null;
 		null != a && RProfiler.addInfo("indicator", a, parseFloat(parseFloat(e).toFixed(2)))
 	}
-	/*window.onload = function() {
+	window.onbeforeunload = function() {
 		if(typeof webVitals !== 'undefined'){
 			webVitals.getCLS(setIndicator), webVitals.getFID(setIndicator), webVitals.getLCP(setIndicator)
 		}
-	};*/
-	window.onbeforeunload = function("load", (function() {
+	};
+	/*document.addEventListener("load", (function() {
 		console.log('addEventListener 4');
 		if(typeof webVitals !== 'undefined'){
 			webVitals.getCLS(setIndicator), webVitals.getFID(setIndicator), webVitals.getLCP(setIndicator)
 		}
-	}));
+	}));*/
 	let catchpoint_run = function(ddo) {
 			let catPro = window.RProfiler,
 				ddoPageInfo = ddo.page.pageInfo,
